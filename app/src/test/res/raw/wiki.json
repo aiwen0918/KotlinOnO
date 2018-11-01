@@ -1,0 +1,104 @@
+{
+  "batchcomplete": "",
+  "continue": {
+    "sroffset": 10,
+    "continue": "-||"
+  },
+  "query": {
+    "searchinfo": {
+      "totalhits": 23747
+    },
+    "search": [
+      {
+        "ns": 0,
+        "title": "Donald Trump",
+        "pageid": 4848272,
+        "size": 369237,
+        "wordcount": 32252,
+        "snippet": "Donald John <span class=\"searchmatch\">Trump</span> (born June 14, 1946) is the 45th and current President of the United States. Before entering politics, he was a businessman and television",
+        "timestamp": "2018-11-01T02:39:07Z"
+      },
+      {
+        "ns": 0,
+        "title": "Trump",
+        "pageid": 253639,
+        "size": 3747,
+        "wordcount": 415,
+        "snippet": "<span class=\"searchmatch\">Trump</span> most commonly refers to: <span class=\"searchmatch\">Trump</span> (card games), any playing card given an ad-hoc high rank Donald <span class=\"searchmatch\">Trump</span> (born 1946), 45th President of the United States",
+        "timestamp": "2018-09-13T19:42:49Z"
+      },
+      {
+        "ns": 0,
+        "title": "Melania Trump",
+        "pageid": 1209075,
+        "size": 58496,
+        "wordcount": 5184,
+        "snippet": "Melania <span class=\"searchmatch\">Trump</span> (/məˈlɑːniə/; born Melanija Knavs; [mɛˈlaːnija ˈknaːu̯s], Germanized to Melania Knauss; born April 26, 1970) is a Slovenian-American former",
+        "timestamp": "2018-10-28T03:18:49Z"
+      },
+      {
+        "ns": 0,
+        "title": "Ivana Trump",
+        "pageid": 1057887,
+        "size": 21265,
+        "wordcount": 1985,
+        "snippet": "divorced in 1992. They have three children together, Donald <span class=\"searchmatch\">Trump</span> Jr., Ivanka <span class=\"searchmatch\">Trump</span>, and Eric <span class=\"searchmatch\">Trump</span>. Ivana Zelníčková was born on February 20, 1949 in the",
+        "timestamp": "2018-11-01T13:54:24Z"
+      },
+      {
+        "ns": 0,
+        "title": "Ivanka Trump",
+        "pageid": 1861441,
+        "size": 87170,
+        "wordcount": 6741,
+        "snippet": "Ivana Marie &quot;Ivanka&quot; <span class=\"searchmatch\">Trump</span> (/ɪˈvɑːŋkə/; born October 30, 1981) is an American businesswoman, fashion designer, author and reality television personality",
+        "timestamp": "2018-10-31T02:02:29Z"
+      },
+      {
+        "ns": 0,
+        "title": "Fred Trump",
+        "pageid": 1203316,
+        "size": 34104,
+        "wordcount": 3280,
+        "snippet": "Christ <span class=\"searchmatch\">Trump</span> (October 11, 1905 – June 25, 1999) was an American real estate developer, primarily in New York City, and father of Donald <span class=\"searchmatch\">Trump</span>, the 45th",
+        "timestamp": "2018-10-31T07:29:39Z"
+      },
+      {
+        "ns": 0,
+        "title": "Vanessa Trump",
+        "pageid": 56850657,
+        "size": 12652,
+        "wordcount": 990,
+        "snippet": "Vanessa Kay <span class=\"searchmatch\">Trump</span> (born December 18, 1977) is an American socialite, actress and former model. She married Donald <span class=\"searchmatch\">Trump</span> Jr. in 2005 and they separated",
+        "timestamp": "2018-10-27T18:44:26Z"
+      },
+      {
+        "ns": 0,
+        "title": "Tiffany Trump",
+        "pageid": 4339721,
+        "size": 13582,
+        "wordcount": 1014,
+        "snippet": "Ariana <span class=\"searchmatch\">Trump</span> (born October 13, 1993) is an American socialite, model, and Georgetown Law student in Washington, D.C., and the daughter of Donald <span class=\"searchmatch\">Trump</span> and",
+        "timestamp": "2018-10-30T23:07:08Z"
+      },
+      {
+        "ns": 0,
+        "title": "Lara Trump",
+        "pageid": 53499903,
+        "size": 6031,
+        "wordcount": 429,
+        "snippet": "Donald Trump. She is married to Eric <span class=\"searchmatch\">Trump</span>, the third child of Donald <span class=\"searchmatch\">Trump</span>. She is the producer/host of <span class=\"searchmatch\">Trump</span> Production's Real News Update and the",
+        "timestamp": "2018-10-30T02:05:37Z"
+      },
+      {
+        "ns": 0,
+        "title": "United States presidential election, 2016",
+        "pageid": 21377251,
+        "size": 378509,
+        "wordcount": 23971,
+        "snippet": "Tuesday, November 8, 2016. The Republican ticket of businessman Donald <span class=\"searchmatch\">Trump</span> and Indiana Governor Mike Pence defeated the Democratic ticket of former",
+        "timestamp": "2018-11-01T02:38:10Z"
+      }
+    ]
+  }
+}
