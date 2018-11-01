@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'jacoco-android'
 
 apply plugin: 'kotlin-android'
 
@@ -19,10 +18,8 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            testCoverageEnabled false
         }
         debug {
-            testCoverageEnabled true
         }
     }
 }
@@ -39,3 +36,57 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+//**************************************//
+// Jacoco
+// Ref:
+// - https://github.com/mgouline/android-samples/tree/master/jacoco
+// - https://blog.gouline.net/code-coverage-on-android-with-jacoco-92ec90c9355e
+// - http://vgaidarji.me/blog/2017/12/20/how-to-configure-jacoco-for-kotlin-and-java-project/
+// - https://engineering.rallyhealth.com/android/code-coverage/testing/2018/06/04/android-code-coverage.html
+//**************************************//
+apply plugin: 'jacoco'
+
+jacoco {
+    reportsDir = file("$buildDir/reports")
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports for Debug build"
+
+    // sources
+    sourceDirectories = files([
+            android.sourceSets.main.java.srcDirs,
+            "src/main/kotlin"
+    ])
+    executionData = files("$buildDir/jacoco/testDebugUnitTest.exec")
+
+    // what to exclude from coverage report
+    // UI, "noise", generated classes, platform classes, etc.
+    def excludes = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/*$ViewInjector*.*',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*',
+            '**/*Fragment.*',
+            '**/*Activity.*'
+    ]
+    // generated classes
+    classDirectories = fileTree(
+            dir: "$buildDir/intermediates/classes/debug",
+            excludes: excludes
+    ) + fileTree(
+            dir: "$buildDir/tmp/kotlin-classes/debug",
+            excludes: excludes
+    )
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+//**************************************//
