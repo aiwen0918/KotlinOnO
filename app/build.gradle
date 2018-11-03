@@ -62,8 +62,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
     ])
     executionData = files("$buildDir/jacoco/testDebugUnitTest.exec")
 
-    // what to exclude from coverage report
-    // UI, "noise", generated classes, platform classes, etc.
+    // what to exclude from coverage report UI, "noise", generated classes, platform classes, etc.
     def excludes = [
             '**/R.class',
             '**/R$*.class',
