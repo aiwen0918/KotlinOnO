@@ -90,3 +90,10 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
     }
 }
 //**************************************//
+apply plugin: 'gnag'
+
+gnag {
+    github {
+        repoName 'aiwen0918/KotlinOnO'
+    }
+}
