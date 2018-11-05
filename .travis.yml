@@ -1,13 +1,19 @@
 language: android
+jdk: oraclejdk8
+sudo: false
+
 android:
   components:
-  - platform-tools
-  - tools
-  - build-tools-28.0.3
-  - android-28
-jdk:
-  - oraclejdk8
-branches:
-  only:
-  - master
-script: "bash travis-build.sh"
+    - platform-tools
+    - tools
+    - build-tools-28.0.3
+    - android-28
+    - extra-android-m2repository
+
+
+script:
+  - ./gradlew connectedAndroidTest
+  - bash travis-build.sh
+# private repo
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t your-repository-upload-token
