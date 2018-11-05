@@ -34,6 +34,9 @@ jobs:
       - run:
           name: Gnag
           command: bash gnag.sh
+      - run:
+          name: Post Gnag report
+          command: mv -rf app/build/outputs/gnag app/build/reports
       - store_artifacts:
           path: app/build/reports
           destination: reports
