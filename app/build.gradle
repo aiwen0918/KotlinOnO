@@ -56,12 +56,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
     description = "Generate Jacoco coverage reports for Debug build"
 
     // sources
-    sourceDirectories = files([
-            android.sourceSets.main.java.srcDirs,
-            "src/main/kotlin"
-    ])
-    executionData = files("$buildDir/jacoco/testDebugUnitTest.exec")
-
+    sourceDirectories = files("src/main/java")
     // what to exclude from coverage report
     // UI, "noise", generated classes, platform classes, etc.
     def excludes = [
@@ -77,13 +72,13 @@ task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
     ]
     // generated classes
     classDirectories = fileTree(
-            dir: "$buildDir/intermediates/classes/debug",
+            dir: "$buildDir/intermediates/javac/debug",
             excludes: excludes
     ) + fileTree(
             dir: "$buildDir/tmp/kotlin-classes/debug",
             excludes: excludes
     )
-
+    executionData = files("$buildDir/jacoco/testDebugUnitTest.exec")
     reports {
         xml.enabled = true
         html.enabled = true
@@ -94,7 +89,62 @@ apply plugin: 'gnag'
 
 gnag {
     failOnError false
+    checkstyle {
+        enabled false
+    }
+    pmd {
+        enabled false
+    }
+    findbugs {
+        enabled true
+    }
+    ktlint {
+        enabled false
+    }
+    detekt {
+        enabled false
+    }
+    androidLint {
+        enabled false
+    }
     github {
         repoName 'aiwen0918/KotlinOnO'
+    }
+}
+//**************************************//
+apply plugin: "findbugs"
+
+task findbugs(type: FindBugs, dependsOn: "testDebugUnitTest") {
+    group = 'verification'
+    description = 'Find bugs mainly design flaws, bad practices, multithreaded correctness and code vulnerabilities.'
+    ignoreFailures = true
+    reportLevel = "low"
+    effort = 'max'
+
+    def excludes = [
+            '**/R.class',
+            '**/R$*.class',
+            '**/*$ViewInjector*.*',
+            '**/BuildConfig.*',
+            '**/Manifest*.*',
+            '**/*Test*.*',
+            'android/**/*.*',
+            '**/*Fragment.*',
+            '**/*Activity.*'
+    ]
+    source = fileTree(dir: "src/main/java")
+    classes = fileTree(
+            dir: "$buildDir/intermediates/javac/debug",
+            excludes: excludes
+    ) + fileTree(
+            dir: "$buildDir/tmp/kotlin-classes/debug/com/"
+    )
+    classpath = files()
+    excludeFilter = file("$rootDir/findbugs_exclude.xml")
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        html.destination = "$project.buildDir/reports/findbugs.html"
     }
 }

@@ -1,0 +1,23 @@
+<FindBugsFilter>
+     <Match>
+       <Class name="~.*\.R\$.*$" />
+     </Match>
+     <Match>
+       <Class name="~.*\.Manifest\$.*$" />
+     </Match>
+     <Match>
+       <Package name="~android\..*" />
+     </Match>
+     <Match>
+       <Package name="~java\..*" />
+     </Match>
+     <Match>
+       <Package name="~javax\..*" />
+     </Match>
+     <Match>
+       <Package name="~dalvik\..*" />
+     </Match>
+     <Match>
+       <Package name="~org.apache.http.*" />
+     </Match>
+</FindBugsFilter>
